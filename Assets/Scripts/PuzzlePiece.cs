@@ -2,22 +2,18 @@ using UnityEngine;
 
 public class PuzzlePiece : MonoBehaviour
 {
-    [SerializeField] private SpriteRenderer Renderer;
+    public GameObject correctPlace;
 
     [SerializeField] private AudioSource aSource;
-    [SerializeField] private AudioClip pickUp, drop;
+    [SerializeField] private AudioClip pickUp;
+
+    [SerializeField] public float distance;
 
     private bool dragging;
+    private bool locked;
 
     Vector2 offset, originalPos;
 
-    private PuzzleSlot slot;
-
-    public void Init(PuzzleSlot)
-    {
-        Renderer.sprite = slot.Renderer.sprite;
-        slot = slot;
-    }
 
     void Awake()
     {
@@ -26,11 +22,15 @@ public class PuzzlePiece : MonoBehaviour
 
     private void Update()
     {
-        if (!dragging) return;
+        if (!locked)
+        {
+            if (!dragging) return;
 
-        var mousePos = GetMousePos();
+            var mousePos = GetMousePos();
 
-        transform.position = mousePos - offset;
+            transform.position = mousePos - offset;
+        }
+        
     }
 
     void OnMouseDown()
@@ -43,10 +43,20 @@ public class PuzzlePiece : MonoBehaviour
 
     void OnMouseUp() 
     { 
-        dragging = false; 
-        aSource.PlayOneShot(drop); 
+        dragging = false;
 
-        transform.position = originalPos;
+        if (Mathf.Abs(this.transform.localPosition.x - correctPlace.transform.localPosition.x) <= distance &&
+            Mathf.Abs(this.transform.localPosition.y - correctPlace.transform.localPosition.y) <= distance)
+        {
+            Debug.Log("Coinciden!");
+            this.transform.position = new Vector2(correctPlace.transform.position.x, correctPlace.transform.position.y);
+            locked = true;
+        }
+        else
+        {
+            transform.position = originalPos;
+            Debug.Log("lol no");
+        }
     }
 
     Vector2 GetMousePos()

@@ -1,30 +1,39 @@
-using NUnit.Framework;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
+using System.Collections;
+using UnityEngine.SceneManagement;
+
 
 public class PuzzleManager : MonoBehaviour
 {
-    [SerializeField] private List<PuzzleSlot> slotPrefabs;
-    [SerializeField] private PuzzlePiece piecePrefabs;
-    [SerializeField] private Transform slotParent, pieceParent;
+    bool loadingStarted = false;
+    bool finished = false;
+    float secondsLeft = 0;
 
-    void start()
+    void Start()
     {
-        Spawn();
+        StartCoroutine(DelayLoadLevel(10));
     }
 
-    void Spawn()
+    IEnumerator DelayLoadLevel(float seconds)
     {
-        var randomSet = slotPrefabs.OrderBy(s = Random.value).take(2).Tolist();
-
-        for (int i = 0; i < randomSet.Count; i++)
+        secondsLeft = seconds;
+        loadingStarted = true;
+        do
         {
-            var spawnedSlot = Instantiate(randomSet[i], slotParent.GetChild(i).position, Quaternion.identity);
+            yield return new WaitForSeconds(1);
+        } while (--secondsLeft > 0 && !finished);
 
-            var spawnedPiece = Instantiate(piecePrefab, pieceParent.GetChild(i).position, Quaternion.identity);
-            spawnedPiece.Init(spawnedSlot);
+        if(finished)
+        {
+            SceneManager.LoadScene("Win");
         }
+
+        SceneManager.LoadScene("Fail");
     }
 
+    void OnGUI()
+    {
+        if (loadingStarted)
+            GUI.Label(new Rect(0, 0, 100, 20), secondsLeft.ToString());
+    }
 }

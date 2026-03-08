@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4013000532770714574
+--- !u!1 &7314130440784738085
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7818709709655493156}
-  - component: {fileID: 194477092080461433}
-  - component: {fileID: 7462601375455326805}
-  - component: {fileID: 117998244746728292}
-  - component: {fileID: 2461460181711358836}
+  - component: {fileID: 5327771757615301958}
+  - component: {fileID: 8970980890559013475}
+  - component: {fileID: 4417637240102409648}
+  - component: {fileID: 914886719599327760}
+  - component: {fileID: 160697050490488383}
   m_Layer: 0
-  m_Name: piece E
+  m_Name: piece D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7818709709655493156
+--- !u!4 &5327771757615301958
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4013000532770714574}
+  m_GameObject: {fileID: 7314130440784738085}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.819951, y: 3.288134, z: 0}
+  m_LocalPosition: {x: 2.03, y: 0.39, z: 0}
   m_LocalScale: {x: 1.6189651, y: 1.6189651, z: 1.6189651}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &194477092080461433
+--- !u!212 &8970980890559013475
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4013000532770714574}
+  m_GameObject: {fileID: 7314130440784738085}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingLayerID: 1351693925
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 8744573965347824784, guid: 3885f66c8cc247a43accfb7d19b345f6, type: 3}
+  m_Sprite: {fileID: 7584875828100514122, guid: 3885f66c8cc247a43accfb7d19b345f6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -93,13 +93,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!82 &7462601375455326805
+--- !u!82 &4417637240102409648
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4013000532770714574}
+  m_GameObject: {fileID: 7314130440784738085}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -190,13 +190,13 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!60 &117998244746728292
+--- !u!60 &914886719599327760
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4013000532770714574}
+  m_GameObject: {fileID: 7314130440784738085}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -228,7 +228,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.61, y: 1.61}
+    oldSize: {x: 1.17, y: 2.18}
     newSize: {x: 1.53, y: 0.83}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -236,26 +236,26 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.78499997, y: 0.78499997}
-      - {x: -0.78499997, y: -0.755}
-      - {x: -0.73499995, y: -0.78499997}
-      - {x: -0.695, y: -0.78499997}
-      - {x: 0.775, y: 0.675}
-      - {x: 0.775, y: 0.78499997}
+    - - {x: 0.49028093, y: 1.0963893}
+      - {x: -0.565, y: 0.049999997}
+      - {x: -0.58083355, y: -0.036106825}
+      - {x: 0.47052726, y: -1.0699999}
+      - {x: 0.565, y: -1.0699999}
+      - {x: 0.565, y: 1.0699999}
   m_UseDelaunayMesh: 0
---- !u!114 &2461460181711358836
+--- !u!114 &160697050490488383
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4013000532770714574}
+  m_GameObject: {fileID: 7314130440784738085}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ebce6fc3e6e46eb43a5ce6ed10ddebf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PuzzlePiece
   correctPlace: {fileID: 0}
-  aSource: {fileID: 7462601375455326805}
+  aSource: {fileID: 4417637240102409648}
   pickUp: {fileID: 8300000, guid: 268a6002c5daf6c4f8c79446a29d3e86, type: 3}
   drop: {fileID: 8300000, guid: 268a6002c5daf6c4f8c79446a29d3e86, type: 3}
