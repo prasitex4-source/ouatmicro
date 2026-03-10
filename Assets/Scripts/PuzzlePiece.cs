@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PuzzlePiece : MonoBehaviour
 {
@@ -26,10 +27,16 @@ public class PuzzlePiece : MonoBehaviour
         {
             if (!dragging) return;
 
+            if (Mouse.current.rightButton.wasPressedThisFrame && dragging)
+            {
+                Rotate();
+            }
+
             var mousePos = GetMousePos();
 
             transform.position = mousePos - offset;
         }
+
         
     }
 
@@ -39,6 +46,7 @@ public class PuzzlePiece : MonoBehaviour
         aSource.PlayOneShot(pickUp);
 
         offset = GetMousePos() - (Vector2)transform.position;
+
     }
 
     void OnMouseUp() 
@@ -48,15 +56,22 @@ public class PuzzlePiece : MonoBehaviour
         if (Mathf.Abs(this.transform.localPosition.x - correctPlace.transform.localPosition.x) <= distance &&
             Mathf.Abs(this.transform.localPosition.y - correctPlace.transform.localPosition.y) <= distance)
         {
-            Debug.Log("Coinciden!");
             this.transform.position = new Vector2(correctPlace.transform.position.x, correctPlace.transform.position.y);
             locked = true;
         }
         else
         {
             transform.position = originalPos;
-            Debug.Log("lol no");
         }
+    }
+
+    public void Rotate()
+    {
+        if (dragging)
+        {
+            this.transform.Rotate(0, 0, 45);
+        }
+
     }
 
     Vector2 GetMousePos()
