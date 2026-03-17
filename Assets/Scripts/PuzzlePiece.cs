@@ -11,7 +11,7 @@ public class PuzzlePiece : MonoBehaviour
     [SerializeField] public float distance;
 
     private bool dragging;
-    public bool locked;
+    private bool locked;
 
     Vector2 offset, originalPos;
 
@@ -49,7 +49,7 @@ public class PuzzlePiece : MonoBehaviour
 
     }
 
-    public void OnMouseUp() 
+    void OnMouseUp() 
     { 
         dragging = false;
 
