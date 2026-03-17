@@ -11,7 +11,7 @@ public class PuzzlePiece : MonoBehaviour
     [SerializeField] public float distance;
 
     private bool dragging;
-    private bool locked;
+    static bool locked;
 
     Vector2 offset, originalPos;
 
