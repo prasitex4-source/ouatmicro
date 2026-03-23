@@ -12,7 +12,7 @@ public class PuzzlePiece : MonoBehaviour
     [SerializeField] public float distance;
 
     private bool dragging;
-    private bool locked;
+    public bool locked;
 
     Vector2 offset, originalPos;
 
@@ -57,7 +57,7 @@ public class PuzzlePiece : MonoBehaviour
 
         if (Mathf.Abs(this.transform.localRotation.z - correctPlace.transform.localRotation.z) <= distance)
         {
-            Debug.Log("rotación ok");
+            Debug.Log("rotaciï¿½n ok");
 
             if (Mathf.Abs(this.transform.localPosition.x - correctPlace.transform.localPosition.x) <= distance &&
                 Mathf.Abs(this.transform.localPosition.y - correctPlace.transform.localPosition.y) <= distance)

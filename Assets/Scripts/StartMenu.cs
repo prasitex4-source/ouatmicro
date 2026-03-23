@@ -8,7 +8,7 @@ public class StartMenu : MonoBehaviour
 
     private void Update()
     {
-        //if (parche.locked)
+        if (parche.locked)
         {
             boton.SetActive(true);
         }
