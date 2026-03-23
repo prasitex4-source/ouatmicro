@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -15,6 +16,7 @@ public class PuzzlePiece : MonoBehaviour
 
     Vector2 offset, originalPos;
 
+    public Timer Timer;
 
     void Awake()
     {
@@ -53,12 +55,22 @@ public class PuzzlePiece : MonoBehaviour
     { 
         dragging = false;
 
-        if (Mathf.Abs(this.transform.localPosition.x - correctPlace.transform.localPosition.x) <= distance &&
-            Mathf.Abs(this.transform.localPosition.y - correctPlace.transform.localPosition.y) <= distance)
+        if (Mathf.Abs(this.transform.localRotation.z - correctPlace.transform.localRotation.z) <= distance)
         {
-            this.transform.position = new Vector2(correctPlace.transform.position.x, correctPlace.transform.position.y);
-            locked = true;
+            Debug.Log("rotación ok");
+
+            if (Mathf.Abs(this.transform.localPosition.x - correctPlace.transform.localPosition.x) <= distance &&
+                Mathf.Abs(this.transform.localPosition.y - correctPlace.transform.localPosition.y) <= distance)
+            {
+                this.transform.position = new Vector2(correctPlace.transform.position.x, correctPlace.transform.position.y);
+                locked = true;
+
+                Timer.pieces += 1;
+            }
+
         }
+
+
         else
         {
             transform.position = originalPos;
