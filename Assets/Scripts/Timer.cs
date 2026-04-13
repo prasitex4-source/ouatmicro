@@ -4,38 +4,55 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-
-    [SerializeField] Image timerBackground;
     [SerializeField] Image timerForeground;
 
     public int pieces = 0;
 
+    [Header("Tiempo")]
+    [SerializeField] float totalTime;   // Cuándo termina el juego
+    [SerializeField] float freezeTime;  // Desde cuándo la barra se congela
+
     float timeRemaining;
-    public float maxTime;
+    bool gameEnded = false;
 
     void Start()
     {
-        timeRemaining = maxTime;
+        timeRemaining = totalTime;
     }
 
     void Update()
     {
-        Debug.Log(pieces);
+        if (gameEnded) return;
 
         if (timeRemaining > 0)
         {
             timeRemaining -= Time.deltaTime;
-            timerForeground.fillAmount = timeRemaining / maxTime;
 
+            // Parte en la que la barra baja
+            if (timeRemaining > freezeTime)
+            {
+                float activeDuration = totalTime - freezeTime;
+                float normalizedTime = (timeRemaining - freezeTime) / activeDuration;
+                timerForeground.fillAmount = normalizedTime;
+            }
+            // Parte congelada
+            else
+            {
+                timerForeground.fillAmount = 0f;
+            }
+
+            // Victoria
             if (pieces == 7)
             {
+                gameEnded = true;
                 SceneManager.LoadScene("Win");
             }
         }
         else
         {
+            // Derrota
+            gameEnded = true;
             SceneManager.LoadScene("Fail");
         }
-
     }
 }

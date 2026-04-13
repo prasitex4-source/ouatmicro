@@ -47,5 +47,8 @@ TagManager:
   - name: pieces
     uniqueID: 1351693925
     locked: 0
+  - name: separador
+    uniqueID: 984002105
+    locked: 0
   m_RenderingLayers:
   - Default
