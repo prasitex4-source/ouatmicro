@@ -22,12 +22,14 @@ public class PuzzlePiece : MonoBehaviour
     public bool locked;
 
     Vector2 offset, originalPos;
+    Quaternion originalRot;
 
     public Timer Timer;
 
     void Awake()
     {
         originalPos = transform.position;
+        originalRot = transform.rotation;
 
         z1 = this.transform.localEulerAngles.z;
         z2 = correctPlace.transform.localEulerAngles.z;
@@ -86,6 +88,7 @@ public class PuzzlePiece : MonoBehaviour
         {
             aSource.PlayOneShot(oh);
             transform.position = originalPos;
+            transform.rotation = originalRot;
         }
     }
 

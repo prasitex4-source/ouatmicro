@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class StartMenu : MonoBehaviour
 {
     [SerializeField] GameObject boton;
-    [SerializeField] PuzzlePiece parche;
+    [SerializeField] Between_Buttons parche;
 
     private void Update()
     {

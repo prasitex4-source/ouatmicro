@@ -454,7 +454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StartMenu
   boton: {fileID: 1430078463}
-  parche: {fileID: 2091355550}
+  parche: {fileID: 2091355553}
 --- !u!114 &355913625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1644,7 +1644,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2091355552}
   - component: {fileID: 2091355551}
-  - component: {fileID: 2091355550}
+  - component: {fileID: 2091355553}
   - component: {fileID: 2091355549}
   - component: {fileID: 2091355548}
   m_Layer: 0
@@ -1797,27 +1797,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 4.5159273, y: 2.273748}
   m_EdgeRadius: 0
---- !u!114 &2091355550
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2091355547}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebce6fc3e6e46eb43a5ce6ed10ddebf8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PuzzlePiece
-  correctPlace: {fileID: 2070077483}
-  aSource: {fileID: 2091355548}
-  pickUp: {fileID: 8300000, guid: 268a6002c5daf6c4f8c79446a29d3e86, type: 3}
-  yay: {fileID: 0}
-  oh: {fileID: 0}
-  distance: 0.5
-  angleDiff: 0
-  locked: 0
-  Timer: {fileID: 0}
 --- !u!212 &2091355551
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1891,6 +1870,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2091355553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091355547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e02cc46ed677be439440bd29bbe16aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Between_Buttons
+  correctPlace: {fileID: 2070077483}
+  aSource: {fileID: 2091355548}
+  pickUp: {fileID: 8300000, guid: 268a6002c5daf6c4f8c79446a29d3e86, type: 3}
+  distance: 0.5
+  locked: 0
 --- !u!1 &2137798137
 GameObject:
   m_ObjectHideFlags: 0
